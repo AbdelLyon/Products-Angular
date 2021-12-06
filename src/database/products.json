@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "name": "test267",
+      "price": 2,
+      "quantity": 2,
+      "selected": true,
+      "id": 8,
+      "available": true
+    },
+    {
+      "name": "test12",
+      "price": 0,
+      "quantity": 0,
+      "selected": true,
+      "id": 11,
+      "available": false
+    },
+    {
+      "name": "abdel",
+      "price": 0,
+      "quantity": 0,
+      "selected": true,
+      "id": 12,
+      "available": false
+    }
+  ]
+}

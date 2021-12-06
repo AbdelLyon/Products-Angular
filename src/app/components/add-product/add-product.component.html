@@ -1,0 +1,26 @@
+<div class="container mt-5" *ngIf="formGroup">
+   <form class="bg-light w-75 m-auto p-5" [formGroup]='formGroup'>
+      <div class="mb-3">
+         <label for="name" class="form-label">Nom</label>
+         <input type="text" class="form-control" id="name" formControlName="name"
+            [ngClass]="{'is-invalid': submitted && formGroup}">
+
+         <div *ngIf="submitted && formGroup" class="invalid-feedback">
+            <div *ngIf="formGroup">Le nom n'est pas definit</div>
+         </div>
+      </div>
+      <div class="mb-3">
+         <label for="price" class="form-label">Prix</label>
+         <input type="number" class="form-control" id="price" formControlName="price">
+      </div>
+      <div class="mb-3">
+         <label for="quantity" class="form-label">Quantité</label>
+         <input type="number" class="form-control" id="quantity" formControlName="quantity">
+      </div>
+      <div class="mb-3 form-check">
+         <input type="checkbox" class="form-check-input" id="selected" formControlName="selected">
+         <label class="form-check-label" for="selected">Sélection</label>
+      </div>
+      <button type="button" class="btn btn-outline-success btn-sm" (click)="onSave()">Ajouter</button>
+   </form>
+</div>
