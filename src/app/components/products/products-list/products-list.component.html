@@ -1,1 +1,55 @@
-<p>products-list works!</p>
+<div class="container">
+   <ng-container *ngIf="products | async as res" [ngSwitch]="res.dataState">
+      <ng-container *ngSwitchCase="DataStateEnum.LOADING">
+         Loading ...
+      </ng-container>
+      <ng-container *ngSwitchCase="DataStateEnum.ERROR">
+         <div class="col-12 text-center">
+            <div class="alert alert-danger">
+               {{res.errorMessage}}
+            </div>
+         </div>
+      </ng-container>
+      <ng-container *ngSwitchDefault>
+
+         <table class="table mt-5 table-dark table-striped">
+            <thead>
+               <tr>
+                  <th>ID</th>
+                  <th>Nom</th>
+                  <th>Quantité</th>
+                  <th>Disponibilité</th>
+                  <th>Sélection</th>
+                  <th>Suppression</th>
+                  <th>Modification</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let p of res.data">
+                  <td> {{p.id}} </td>
+                  <td> {{p.name}} </td>
+                  <td> {{p.quantity}} </td>
+                  <td>
+                     <div [ngClass]="p.quantity !== 0 ? 'text-success' : 'text-danger'" class="btn btn-sm btn-dispo"
+                        readonly>
+                        <span *ngIf="p.quantity > 0">Disponible</span>
+                        <span *ngIf="p.quantity === 0">Indisponible</span>
+                     </div>
+                  </td>
+                  <td>
+                     <button (click)="onSelect(p)" [ngClass]="p.selected ? 'btn-outline-success' : 'btn-outline-danger'"
+                        class="btn btn-sm">
+                        <span *ngIf="p.selected">Séléctionner</span>
+                        <span *ngIf="!p.selected">Déselectionner</span>
+                     </button>
+                  </td>
+                  <td><button (click)="onDelete(p)" class="btn btn-outline-danger btn-sm">Supprimer</button>
+                  </td>
+                  <td><button (click)="onUpdate(p)" class="btn btn-outline-success btn-sm">Modifier</button>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      </ng-container>
+   </ng-container>
+</div>

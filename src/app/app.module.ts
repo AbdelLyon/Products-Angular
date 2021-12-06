@@ -6,11 +6,11 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductsNavBarComponent } from './components/products/products-nav-bar/products-nav-bar.component';
-import { ProductsListComponent } from './components/products/products-list/products-list.component';
-import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AddProductComponent } from './components/add-product/add-product.component';
+import { AddProductComponent } from './components/products/add-product/add-product.component';
+import { HomeComponent } from './components/home/home.component';
+import { ProductsListComponent } from './components/products/products-list/products-list.component';
 
 @NgModule({
   declarations: [
@@ -18,9 +18,9 @@ import { AddProductComponent } from './components/add-product/add-product.compon
     NavBarComponent,
     ProductsComponent,
     ProductsNavBarComponent,
-    ProductsListComponent,
+    AddProductComponent,
     HomeComponent,
-    AddProductComponent
+    ProductsListComponent
   ],
   imports: [
     BrowserModule,

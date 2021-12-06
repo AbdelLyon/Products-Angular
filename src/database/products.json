@@ -2,24 +2,19 @@
   "products": [
     {
       "name": "abdel kjjkjkfjkjf",
+      "img": "https://dxkmbl8uwuv9p.cloudfront.net/hubside/1617121913191/b35a8282-10da-4a9c-b18a-8cb16e58c000/samsung-galaxy-s21-5g-gris-neuf-reconditionne%CC%81-1.jpg",
       "price": 0,
       "quantity": 0,
       "selected": false,
       "id": 12
     },
     {
-      "name": "coucou",
+      "name": "abdel",
+      "img": "https://cdn.pixabay.com/photo/2015/05/15/14/38/computer-768608_960_720.jpg",
       "price": 0,
       "quantity": 0,
       "selected": true,
       "id": 13
-    },
-    {
-      "name": "ahamiane",
-      "price": 5,
-      "quantity": 0,
-      "selected": true,
-      "id": 14
     }
   ]
 }

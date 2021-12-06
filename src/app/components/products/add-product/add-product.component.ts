@@ -11,16 +11,15 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class AddProductComponent implements OnInit {
 
-  formGroup?: FormGroup;
-  id: number;
-  submitted: boolean = false
+  public formGroup?: FormGroup;
+  public id: number;
+  public submitted: boolean = false
 
   constructor(
     private fb: FormBuilder,
     private productsService: ProductsService,
     private router: Router,
     private activatedRoute: ActivatedRoute) {
-
     this.id = parseInt(this.activatedRoute.snapshot.paramMap.get('id') as string);
   }
 
@@ -35,12 +34,14 @@ export class AddProductComponent implements OnInit {
   ngOnInit(): void {
     !this.id ? this.formGroup = this.fb.group({
       name: ['', Validators.required],
+      img: ['', Validators.required],
       price: [0, Validators.required],
       quantity: [0, Validators.required],
       selected: [true, Validators.required]
     }) : this.productsService.getOneProduct(this.id).subscribe((p: Product) => {
       this.formGroup = this.fb.group({
         name: [p.name, Validators.required],
+        img: [p.img, Validators.required],
         price: [p.price, Validators.required],
         quantity: [p.quantity, Validators.required],
         selected: [p.selected, Validators.required],

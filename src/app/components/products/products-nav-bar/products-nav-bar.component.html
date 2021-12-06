@@ -1,1 +1,23 @@
-<p>products-nav-bar works!</p>
+<!-- ============== NavBar-product ============== -->
+<nav class="navbar navbar-expand-sm navbar navbar-light bg-light">
+   <div class="container-fluid">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+         <li class="nav-item ms-2">
+            <button (click)="onGetAllProducts()" class="btn btn-outline-info btn-sm">Tous</button>
+         </li>
+         <li class="nav-item ms-2">
+            <button (click)="onGetSelectedProducts()" class="btn btn-outline-info btn-sm">Sélectionnés</button>
+         </li>
+         <li class="nav-item ms-2">
+            <button (click)="onGetAvailableProducts()" class="btn btn-outline-info btn-sm">Disponibles</button>
+         </li>
+         <li class="nav-item ms-2">
+            <button (click)="onAddProduct()" class="btn btn-outline-info btn-sm">Nouveau</button>
+         </li>
+      </ul>
+      <form class="d-flex input-group-sm" #f="ngForm" (ngSubmit)="onSearchProducts(f.value)">
+         <input ngModel name="keyword" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+         <button class="btn btn-outline-success btn-sm" type="submit">Search</button>
+      </form>
+   </div>
+</nav>
