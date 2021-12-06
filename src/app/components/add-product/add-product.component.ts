@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from 'src/app/models/product.model';
+import { Product } from 'src/app/interfaces/product.interface';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -28,7 +28,7 @@ export class AddProductComponent implements OnInit {
     this.submitted = true;
     if (this.formGroup?.invalid) return
     !this.id ? this.productsService.save(this.formGroup?.value).subscribe()
-      : this.productsService.update(this.id, this.formGroup?.value).subscribe();
+      : this.productsService.updateProduct(this.id, this.formGroup?.value).subscribe();
     this.router.navigate(['/products'])
   }
 

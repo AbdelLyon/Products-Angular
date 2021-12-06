@@ -43,8 +43,8 @@
                   <th>ID</th>
                   <th>Nom</th>
                   <th>Quantité</th>
-                  <th>Sélection</th>
                   <th>Disponibilité</th>
+                  <th>Sélection</th>
                   <th>Suppression</th>
                   <th>Modification</th>
                </tr>
@@ -55,22 +55,22 @@
                   <td> {{p.name}} </td>
                   <td> {{p.quantity}} </td>
                   <td>
-                     <div [ngClass]="p.available ? 'text-success' : 'text-danger'" class="btn btn-sm btn-dispo"
+                     <div [ngClass]="p.quantity !== 0 ? 'text-success' : 'text-danger'" class="btn btn-sm btn-dispo"
                         readonly>
-                        <span *ngIf="p.available">Disponible</span>
-                        <span *ngIf="!p.available">Indisponible</span>
+                        <span *ngIf="p.quantity > 0">Disponible</span>
+                        <span *ngIf="p.quantity === 0">Indisponible</span>
                      </div>
                   </td>
                   <td>
-                     <button (click)="onSelect(p, $event)"
-                        [ngClass]="p.selected ? 'btn-outline-success' : 'btn-outline-danger'" class="btn btn-sm">
+                     <button (click)="onSelect(p)" [ngClass]="p.selected ? 'btn-outline-success' : 'btn-outline-danger'"
+                        class="btn btn-sm">
                         <span *ngIf="p.selected">Séléctionner</span>
                         <span *ngIf="!p.selected">Déselectionner</span>
                      </button>
                   </td>
-                  <td><button (click)="onDelete(p, $event)" class="btn btn-outline-danger btn-sm">Supprimer</button>
+                  <td><button (click)="onDelete(p)" class="btn btn-outline-danger btn-sm">Supprimer</button>
                   </td>
-                  <td><button (click)="onUpdate(p, $event)" class="btn btn-outline-success btn-sm">Modifier</button>
+                  <td><button (click)="onUpdate(p)" class="btn btn-outline-success btn-sm">Modifier</button>
                   </td>
                </tr>
             </tbody>

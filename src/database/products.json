@@ -1,28 +1,25 @@
 {
   "products": [
     {
-      "name": "test267",
-      "price": 2,
-      "quantity": 2,
-      "selected": true,
-      "id": 8,
-      "available": true
+      "name": "abdel kjjkjkfjkjf",
+      "price": 0,
+      "quantity": 0,
+      "selected": false,
+      "id": 12
     },
     {
-      "name": "test12",
+      "name": "coucou",
       "price": 0,
       "quantity": 0,
       "selected": true,
-      "id": 11,
-      "available": false
+      "id": 13
     },
     {
-      "name": "abdel",
-      "price": 0,
+      "name": "ahamiane",
+      "price": 5,
       "quantity": 0,
       "selected": true,
-      "id": 12,
-      "available": false
+      "id": 14
     }
   ]
 }
